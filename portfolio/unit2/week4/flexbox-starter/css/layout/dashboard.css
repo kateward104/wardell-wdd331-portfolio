@@ -67,7 +67,6 @@
     display: flex;
     flex-direction: row;
     min-height: 100vh;
-    /* flex-grow: initial; I have no idea if this would work or help at all */
     flex: 1;
 }
 
@@ -88,9 +87,9 @@
 }
 
 .sidebar-nav {
+    /* Your code here - stack nav items vertically */
     display: flex;
     flex-direction: column;
-    /* Your code here - stack nav items vertically */
 }
 
 .sidebar-nav-item {
@@ -113,8 +112,8 @@
 .dashboard-main {
     /* Your code here */
     flex-grow: inherit;
-    flex: 1;
     padding: var(--spacing-xl);
+    flex: 1;
 }
 
 
@@ -180,7 +179,6 @@
     bottom: 0;
     width: 100%;
     display: flex;
-    flex: 1;
     align-items: center;
     justify-content: center;
     height: 60px;
