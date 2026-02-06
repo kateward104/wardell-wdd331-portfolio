@@ -10,6 +10,7 @@
  * Hint: You learned about this in the Container Queries lesson
  */
 
+
 .card-container {
     /* Your container query setup goes here */
 
@@ -40,6 +41,10 @@
             color: var(--text-clr);
             line-height: var(--line-height-med);
         }
+
+        .card:hover {
+            background-color: #f0f0f0;
+        }
     }
 }
 
@@ -55,6 +60,25 @@
  * This ensures browsers without container query support use the base styles
  * as a fallback.
  */
+
+@supports (container-type: inline-size) {
+    .card-container {
+        container-type: inline-size;
+        container-name: card;
+    }
+
+    @container card (min-width: 400px) {
+        .card {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        .card-image {
+            width: 200px;
+            flex-shrink: 0;
+        }
+    }
+}
 
 /* TODO: Add modern CSS feature with @supports fallback
  * Choose ONE of these modern features to implement with a fallback:
@@ -74,3 +98,9 @@
  * - Wrap in: @supports (grid-template-columns: subgrid) { }
  * - Provide standard grid as fallback
  */
+
+@supports (background: color-mix(in oklch, red, blue)) {
+    .card:hover {
+        background-color: color-mix(in oklch, var(--bg-clr) 95%, var(--link-clr) 5%);
+    }
+}
