@@ -49,11 +49,10 @@
 .dashboard-user-menu {
     /* Your code here - how do you push this to the right? */
     margin-left: auto;
+}
 
-    a {
-        color: white;
-        /* Maybe take this out later. I added it for clarity so I can see the links */
-    }
+.dashboard-user-menu a {
+    color: white;
 }
 
 
@@ -66,7 +65,7 @@
     /* Your code here */
     display: flex;
     flex-direction: row;
-    min-height: 100vh;
+    /*min-height: 100vh;*/
     flex: 1;
 }
 
@@ -111,7 +110,7 @@
  */
 .dashboard-main {
     /* Your code here */
-    flex-grow: inherit;
+    flex-grow: 1;
     padding: var(--spacing-xl);
     flex: 1;
 }
@@ -140,6 +139,8 @@
     /* Your code here */
     display: flex;
     flex-direction: column;
+    flex: 1 1 300px;
+    max-width: 350px;
     background-color: white;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-med);
@@ -155,6 +156,7 @@
 .dashboard-card-body {
     /* Your code here - this should grow to fill available space */
     padding: var(--spacing-med);
+    flex: 1;
 }
 
 .dashboard-card-footer {
@@ -162,7 +164,6 @@
     padding: var(--spacing-med);
     border-top: 1px solid var(--color-border);
     background-color: var(--color-surface);
-    flex: 1;
 }
 
 
@@ -174,10 +175,10 @@
  */
 .dashboard-footer {
     /* Your code here */
-    position: fixed;
+    /*position: fixed;
     left: 0;
     bottom: 0;
-    width: 100%;
+    width: 100%; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -186,7 +187,8 @@
     border-top: 1px solid var(--color-border);
     padding: 0 var(--spacing-lg);
 
-    p {
-        color: var(--color-primary);
-    }
+}
+
+.dashboard-footer p {
+    color: var(--color-primary);
 }
