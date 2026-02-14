@@ -65,11 +65,13 @@
     padding: 0 var(--spacing-lg);
 
     /* TODO: Use grid-template-areas here */
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-areas: "logo nav";
     /* Define areas for logo and nav */
-    /* I need to make the navigation responsive, and I'm not entirely sure how. */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "logo"
+        "nav";
+    gap: var(--spacing-med);
 }
 
 .site-logo {
@@ -77,6 +79,7 @@
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
     color: var(--color-text);
+    justify-self: center;
 
     /* TODO: Assign to grid area */
     grid-area: logo;
@@ -93,8 +96,8 @@
 .site-nav ul {
     /* TODO: Use flexbox for navigation links */
     display: flex;
-    gap: 5em;
-    /* I'm not sure how much space to give these*/
+    flex-direction: column;
+    gap: var(--spacing-lg);
     align-items: center;
 }
 
@@ -225,8 +228,10 @@ body {
 
     /* TODO: Use grid for image and text layout */
     display: grid;
-    grid-template-areas: 1fr 1fr;
-    grid-template-areas: "image words";
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "image"
+        "words";
     gap: var(--spacing-lg);
     /* Desktop: image on left, text on right */
     /* Mobile: stack vertically */
@@ -281,7 +286,7 @@ body {
 .footer-social {
     /* TODO: Use flexbox for social links */
     display: flex;
-    gap: var(--spacing-xxl);
+    gap: var(--spacing-xl);
 }
 
 .footer-social a {
@@ -305,3 +310,28 @@ body {
    - Header layout (stack logo/nav on mobile)
    - About section (stack image/text on mobile)
 */
+
+@media (min-width: 768px) {
+    .header-container {
+        /* TODO: Use grid-template-areas here */
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas: "logo nav";
+        /* Define areas for logo and nav */
+        /* I need to make the navigation responsive, and I'm not entirely sure how. */
+    }
+
+    .site-logo {
+        justify-self: start;
+    }
+
+    .site-nav ul {
+        flex-direction: row;
+    }
+
+    .about-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "image words";
+    }
+}
