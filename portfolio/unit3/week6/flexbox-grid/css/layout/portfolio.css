@@ -3,7 +3,7 @@
  * 
  * TODO: Implement the following layout requirements:
  * 
- * 1. STICKY FOOTER PATTERN (Flexbox)
+ * 1. STICKY FOOTER PATTERN (Flexbox) DONE
  *    - Make body a flex container with column direction
  *    - Set min-height to 100vh
  *    - Make main content area grow to push footer down
@@ -65,6 +65,9 @@
     padding: 0 var(--spacing-lg);
 
     /* TODO: Use grid-template-areas here */
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "logo nav";
     /* Define areas for logo and nav */
 }
 
@@ -75,14 +78,20 @@
     color: var(--color-text);
 
     /* TODO: Assign to grid area */
+    grid-area: logo;
 }
 
 .site-nav {
     /* TODO: Assign to grid area */
+    grid-area: nav;
 }
 
 .site-nav ul {
     /* TODO: Use flexbox for navigation links */
+    display: flex;
+    gap: 1em;
+    /* I'm not sure how much space to give these*/
+    align-items: center;
 }
 
 .site-nav a {
