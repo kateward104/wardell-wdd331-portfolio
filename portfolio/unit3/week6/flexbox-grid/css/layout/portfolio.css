@@ -8,7 +8,7 @@
  *    - Set min-height to 100vh
  *    - Make main content area grow to push footer down
  * 
- * 2. HEADER LAYOUT (Grid Template Areas)
+ * 2. HEADER LAYOUT (Grid Template Areas) 
  *    - Use grid-template-areas for header structure
  *    - Create areas: logo, navigation
  *    - Make it responsive (stack on mobile)
@@ -18,25 +18,25 @@
  *    - Space items appropriately
  *    - Align items vertically
  * 
- * 4. HERO SECTION (Grid)
+ * 4. HERO SECTION (Grid) DONE
  *    - Use grid for hero content positioning
  *    - Center content vertically and horizontally
  * 
- * 5. STATS GRID (Auto-Fit)
+ * 5. STATS GRID (Auto-Fit) DONE
  *    - Use repeat(auto-fit, minmax(..., 1fr))
  *    - Make cards responsive without media queries
  *    - Ensure minimum width works on mobile
  * 
- * 6. PHOTO GALLERY (Auto-Fill vs Auto-Fit)
+ * 6. PHOTO GALLERY (Auto-Fill vs Auto-Fit) DONE, I THINK
  *    - Experiment with both auto-fill and auto-fit
  *    - Decide which works better for this layout
  *    - Use minmax() for responsive columns
  * 
- * 7. ABOUT SECTION (Grid + Flexbox)
+ * 7. ABOUT SECTION (Grid + Flexbox) DONE
  *    - Grid for image/text layout
  *    - Flexbox for internal content arrangement
  * 
- * 8. FOOTER (Flexbox)
+ * 8. FOOTER (Flexbox) 
  *    - Use flexbox for footer content
  *    - Distribute space between elements
  */
@@ -66,9 +66,10 @@
 
     /* TODO: Use grid-template-areas here */
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-areas: "logo nav";
     /* Define areas for logo and nav */
+    /* I need to make the navigation responsive, and I'm not entirely sure how. */
 }
 
 .site-logo {
@@ -84,12 +85,15 @@
 .site-nav {
     /* TODO: Assign to grid area */
     grid-area: nav;
+
+    /* grid-template-columns: repeat(auto-fit, minmax(min(100px, 100%), 1fr));
+    How do I make it so this sort of piece can go in the grid-template area? Is tha the right call? */
 }
 
 .site-nav ul {
     /* TODO: Use flexbox for navigation links */
     display: flex;
-    gap: 1em;
+    gap: 5em;
     /* I'm not sure how much space to give these*/
     align-items: center;
 }
@@ -130,6 +134,8 @@ body {
     min-height: 500px;
 
     /* TODO: Use grid to center content */
+    display: grid;
+    place-items: center;
 }
 
 .hero-content {
@@ -165,6 +171,9 @@ body {
 
 .stats-grid {
     /* TODO: Use auto-fit with minmax */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    gap: var(--spacing-lg);
     /* Make cards responsive - 3 columns on desktop, fewer on smaller screens */
     /* Hint: minmax(min(250px, 100%), 1fr) prevents overflow on mobile */
 }
@@ -190,8 +199,14 @@ body {
 
 .photo-grid {
     /* TODO: Implement responsive photo grid */
+    display: grid;
     /* Experiment: Try auto-fill first, then auto-fit */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
     /* Which one looks better for a photo gallery? */
+    /* I think that for practicality's sake, a photographer would most likely not want their images to be distorted, 
+    espsecially with the care and thought that was put into taking them */
+
     /* Consider: Do you want photos to expand or stay consistent width? */
 }
 
@@ -209,12 +224,17 @@ body {
     margin: 0 auto;
 
     /* TODO: Use grid for image and text layout */
+    display: grid;
+    grid-template-areas: 1fr 1fr;
+    grid-template-areas: "image words";
+    gap: var(--spacing-lg);
     /* Desktop: image on left, text on right */
     /* Mobile: stack vertically */
 }
 
 .about-image {
     /* TODO: Assign to grid area or position */
+    grid-area: image;
 }
 
 .about-image img {
@@ -226,7 +246,10 @@ body {
 
 .about-content {
     /* TODO: Assign to grid area or position */
+    grid-area: words;
     /* Use flexbox internally for vertical spacing */
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -246,6 +269,8 @@ body {
     margin: 0 auto;
 
     /* TODO: Use flexbox for footer layout */
+    display: flex;
+    justify-content: space-between;
     /* Space between copyright and social links */
 }
 
@@ -255,6 +280,8 @@ body {
 
 .footer-social {
     /* TODO: Use flexbox for social links */
+    display: flex;
+    gap: var(--spacing-xxl);
 }
 
 .footer-social a {
