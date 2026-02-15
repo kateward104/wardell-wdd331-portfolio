@@ -66,6 +66,9 @@ body {
        - No empty tracks on wide screens
        - Automatic wrapping as screen narrows
     */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    gap: var(--spacing-lg);
 }
 
 .stat-card {
@@ -124,6 +127,10 @@ body {
        
        Answer in your assignment reflection!
     */
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+    gap: var(--spacing-med);
 }
 
 .activity-card {
@@ -132,6 +139,7 @@ body {
     box-shadow: var(--shadow-sm);
     overflow: hidden;
 }
+
 
 .activity-card-image {
     width: 100%;
@@ -171,13 +179,26 @@ body {
    
    1. Why did you choose auto-fit over auto-fill for these grids?
       - What happens with auto-fill when there are few cards?
+      The problem with auto-fill is that it doesn't collapse the remaining columns when it is empty, leaving white space that looks off.
       - What happens with auto-fit?
+      With auto-fill, the look feels more cohesive as the cards stretch slightly to fill the missing spots, but not too much that it 
+      breaks the layout.
    
    2. Does this dashboard layout benefit from subgrid?
       - Are you trying to align content ACROSS cards?
       - Or is each card independent?
+      Since you are not trying to compare information across all cards, I think it is alright to not use a subgrid, although I do think
+      it is always best design wise for the starting text and headings to align. It just makes things easier to read that way. I think
+      that it just depends on what you are trying to accomplish. Since each card is telling a story, you really only have to focus on one
+      at a time. If this was comparing products on Amazon, it would be a different story since you are looking at the same category of 
+      information over and over again, like the price or delivery date, etc.
    
    3. Could you achieve the same layout with Flexbox?
       - What would be harder with Flexbox?
+      I think getting the cards to fill the space well would be harder in flexbox because grid has more control of measuring the space and
+      knowing when it can add more cards. Flexbox is simple and it can be used for a lot of things, but it is fairly simple in nature.
       - When is Grid the better choice?
+      As I said before, grid was better when I was attempting to move the cards on to other rows as it was measuring the space remaining.
+      Other than that, grid helps with responsiveness as well, whereas flex uses more @media selectors, and grid has more flexibility to 
+      move things into one column.
 */
