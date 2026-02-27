@@ -139,42 +139,18 @@
 */
 
 
-/*@container stat-card (width >=200px) {
-    .stat-card-header {
-        flex-direction: row;
-        text-align: left;
-    }
-}*/
-
 /* TODO: Add @container query for stat card at 250px+
    Hint: Make entire card horizontal (flex-direction: row)
    Hint: Use justify-content: space-between to space elements
    Hint: Make stat-card-content flex: 1
 */
 
-/*@container stat-card (min-width: 250px) {
-    .stat-card {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .stat-card-content {
-        flex: 1;
-    }
-}*/
 
 /* TODO: Add @container query for stat card at 350px+
    Hint: Display the mini chart (display: block)
    Hint: Set width to 80px and flex-shrink: 0
 */
 
-/*@container stat-card (min-width: 350px) {
-    .stat-card-chart {
-        display: block;
-        width: 80px;
-        flex-shrink: 0;
-    }
-}*/
 
 /* ============================================
    REVENUE CHART WIDGET
@@ -273,17 +249,6 @@ Hint: Make stats horizontal (flex-direction: row)
 Hint: Add gap: 2rem between stats
 */
 
-/*@container revenue-chart (min-width: 450px) {
-        .revenue-chart-header {
-            flex-direction: row;
-            justify-content: space-between;
-        }
-
-        .revenue-chart-stats {
-            flex-direction: row;
-            gap: 2rem;
-        }
-    }*/
 
 /* ============================================
    TOP PRODUCTS WIDGET
@@ -426,17 +391,11 @@ Hint: Add gap: 2rem between stats
     /* I need to implement this above, I haven't transferred this yet. */
 }
 
+
 /* TODO: Add @container query for product-list at 500px+
    Hint: Change to grid layout with 2 columns
    Hint: grid-template-columns: repeat(2, 1fr)
 */
-
-/*@container product-list (min-width: 500px) {
-    .product-list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-}*/
 
 
 /* TODO: Add @container query for product-list at 800px+
@@ -444,13 +403,6 @@ Hint: Add gap: 2rem between stats
    Hint: grid-template-columns: repeat(3, 1fr)
 */
 
-/*
-@container product-list (min-width: 800px) {
-    .product-list {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-*/
 
 /* ============================================
    USER ACTIVITY WIDGET
@@ -581,21 +533,6 @@ Hint: Add gap: 2rem between stats
    Hint: Make activity-meta flex-shrink: 0
 */
 
-/*@container activity-item (min-width: 400px) {
-    .activity-item {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .activity-item-row {
-        flex: 1;
-    }
-
-    .activity-meta {
-        flex-shrink: 0;
-    }
-}*/
 
 /* ============================================
    PERFORMANCE METRICS WIDGET
@@ -684,45 +621,20 @@ Hint: Add gap: 2rem between stats
    Hint: grid-template-columns: repeat(2, 1fr)
 */
 
-/*
-@container metrics-grid (min-width: 350px) {
-    .metrics-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}*/
 
 /* TODO: Add @container query for metrics-grid at 550px+
    Hint: Change to 3 columns
    Hint: grid-template-columns: repeat(3, 1fr)
 */
 
-/*
-@container metrics-grid (min-width: 550px) {
-    .metrics-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}*/
 
 /* TODO: Add @container query for metrics-grid at 750px+
    Hint: Change to 4 columns
    Hint: grid-template-columns: repeat(4, 1fr)
 */
 
-/*
-@container metrics-grid (min-width: 750px) {
-    .metrics-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}*/
 
 /* TODO: Add @container query for metrics-grid at 950px+
    Hint: Change to 5 columns
    Hint: grid-template-columns: repeat(5, 1fr)
 */
-
-/*
-@container metrics-grid (min-width: 950px) {
-    .metrics-grid {
-        grid-template-columns: repeat(5, 1fr);
-    }
-}*/
