@@ -345,7 +345,7 @@ Hint: Add gap: 2rem between stats
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 0.25rem;
+        gap: 0.5rem;
     }
 
     .product-stat-label {
