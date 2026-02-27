@@ -125,7 +125,7 @@ h3 {
 h4,
 h5,
 h6 {
-    font-size: clamp(var(--font-md), 3vw, var(--font-size-lg));
+    font-size: clamp(var(--font-size-md), 3vw, var(--font-size-lg));
 }
 
 
