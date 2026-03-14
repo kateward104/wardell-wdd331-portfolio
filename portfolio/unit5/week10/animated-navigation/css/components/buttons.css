@@ -19,7 +19,6 @@
    display: inline-flex;
    align-items: center;
    gap: 0.5rem;
-   /* I'm not sure if that's the right spacing */
    padding: 0.6rem 1.25rem;
    border-radius: var(--radius-md);
    font-size: 0.9rem;
@@ -52,7 +51,7 @@
    box-shadow: var(--shadow-md);
 }
 
-.btn-pimary:active {
+.btn-primary:active {
    transform: translateY(0);
    box-shadow: var(--shadow-sm);
 }
@@ -75,7 +74,6 @@
    border: 1px solid var(--color-border);
 
    transition: background var(--transition-base), color var(--transition-base), border-color var(--transition-base);
-   /* I am not sure if that transition goes here or on the original. */
 }
 
 .btn-ghost:hover {
@@ -144,7 +142,13 @@
    - display: inline-flex with a gap so the spinner and text sit side by side
 */
 
-
+.btn-loading {
+   background: var(--color-surface-raised);
+   color: var(--color-text-muted);
+   cursor: default;
+   display: inline-flex;
+   gap: 0.5rem;
+}
 
 
 /* TODO: Style .loading-spinner
@@ -155,3 +159,12 @@
    - Apply the spin @keyframes with a duration of 700ms, linear easing,
      and infinite iteration count
 */
+
+.loading-spinner {
+   width: 1rem;
+   height: 1rem;
+   border-radius: 50%;
+   border: 2px solid var(--color-border);
+   border-top-color: var(--color-accent-light);
+   animation: spin 700ms linear infinite;
+}
