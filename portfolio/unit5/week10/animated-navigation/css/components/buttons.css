@@ -15,6 +15,20 @@
      so hover/active effects animate on all variants
 */
 
+.btn {
+   display: inline-flex;
+   align-items: center;
+   gap: 0.5rem;
+   /* I'm not sure if that's the right spacing */
+   padding: 0.6rem 1.25rem;
+   border-radius: var(--radius-md);
+   font-size: 0.9rem;
+   font-weight: 600;
+   cursor: pointer;
+   border: 1px solid transparent;
+   transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
 
 /* ============================================================
    PRIMARY BUTTON
@@ -28,6 +42,20 @@
      and reduce the shadow back to var(--shadow-sm)
 */
 
+.btn-primary {
+   background: var(--color-accent);
+   color: white;
+}
+
+.btn-primary:hover {
+   transform: translateY(-2px);
+   box-shadow: var(--shadow-md);
+}
+
+.btn-pimary:active {
+   transform: translateY(0);
+   box-shadow: var(--shadow-sm);
+}
 
 /* ============================================================
    GHOST BUTTON
@@ -40,6 +68,21 @@
      color changes to var(--color-text), border-color to var(--color-accent)
    - Transition background, color, and border-color
 */
+
+.btn-ghost {
+   background: transparent;
+   color: var(--color-text-muted);
+   border: 1px solid var(--color-border);
+
+   transition: background var(--transition-base), color var(--transition-base), border-color var(--transition-base);
+   /* I am not sure if that transition goes here or on the original. */
+}
+
+.btn-ghost:hover {
+   background: var(--color-surface-raised);
+   color: var(--color-text);
+   border-color: var(--color-accent);
+}
 
 
 /* ============================================================
@@ -56,6 +99,24 @@
    - Transition: transform and color using var(--transition-base)
 */
 
+.btn-icon {
+   width: 2.5rem;
+   height: 2.5rem;
+   padding: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: transparent;
+   border: 1px solid var(--color-border);
+   color: var(--color-text-muted);
+
+   transition: transform var(--transition-base), color var(--transition-base);
+}
+
+.btn-icon:hover {
+   transform: scale(1.1);
+   color: var(--color-accent-light);
+}
 
 /* ============================================================
    LOADING BUTTON
@@ -65,7 +126,15 @@
    - from: transform: rotate(0deg)
    - to:   transform: rotate(360deg)
 */
+@keyframes spin {
+   from {
+      transform: rotate(0deg);
+   }
 
+   to {
+      transform: rotate(360deg);
+   }
+}
 
 /* TODO: Style .btn-loading
    - Similar base to .btn-primary but use var(--color-surface-raised)
@@ -74,6 +143,8 @@
    - cursor: default (not interactive while loading)
    - display: inline-flex with a gap so the spinner and text sit side by side
 */
+
+
 
 
 /* TODO: Style .loading-spinner
