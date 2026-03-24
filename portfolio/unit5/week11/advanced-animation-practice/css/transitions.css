@@ -26,3 +26,30 @@
      ::view-transition-old(root) { ... }
      ::view-transition-new(root) { ... }
 */
+
+.card-grid {
+  view-transition-name: gallery;
+}
+
+
+@keyframes animatedmotion {
+  from {
+    transform: translateY(20px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+
+::view-transition-old(gallery) {
+  animation-duration: 0ms;
+  animation-timing-function: ease-in-out;
+}
+
+::view-transition-new(gallery) {
+  animation-name: animatedmotion;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+}
