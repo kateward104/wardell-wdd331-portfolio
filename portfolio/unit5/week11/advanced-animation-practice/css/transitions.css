@@ -45,11 +45,11 @@
 
 ::view-transition-old(gallery) {
   animation-duration: 0ms;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: ease-out;
 }
 
 ::view-transition-new(gallery) {
   animation-name: animatedmotion;
   animation-duration: 500ms;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: ease-out;
 }
